@@ -1,6 +1,6 @@
 var https = require("https");
 
-const TOKEN = "UzIyQTgwRjc2NjpxdWV1ZV9kZXZpY2U6RDZGREJBNDkyQUZCMDQ5M0ZFOEMxRDRCN0EwRUNCMjE=";
+const TOKEN = "A_VALID_SCRIPTRIO_TOKEN";
 const URL = "api.scriptrapps.io";
 const API = "/blog/queues/feed";
 
