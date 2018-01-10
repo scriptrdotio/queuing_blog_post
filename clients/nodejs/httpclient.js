@@ -1,6 +1,6 @@
 var https = require("https");
 
-const TOKEN = "A_VALID_SCRIPTRIO_TOKEN";
+const TOKEN = "UzIyQTgwRjc2NjpxdWV1ZV9kZXZpY2U6RDZGREJBNDkyQUZCMDQ5M0ZFOEMxRDRCN0EwRUNCMjE=";
 const URL = "api.scriptrapps.io";
 const API = "/blog/queues/feed";
 
@@ -11,8 +11,9 @@ setInterval(
 		var temperature = Math.round(Math.random() * 5) + 15;
 		var pressure = Math.round(Math.random() * 20) + 80;
 		var params = {
-			temperature: temperature,
-			pressure: pressure,
+			temperature: "" + temperature,
+			pressure: "" + pressure,
+			coordinates: "24.9721527:55.1961022",
 			time: new Date().toISOString()
 		};
 		
