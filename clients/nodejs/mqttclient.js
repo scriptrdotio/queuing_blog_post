@@ -1,8 +1,8 @@
 var mqtt = require("mqtt");
 
-const username = "SCRIPTRIO_QUEUING_USERNAME";
-const password = "SCRIPTRIO_QUEUING_PASSWORD";
-const topic = "SCRIPTRIO_QUEUING_INVOKE_ROUTING_KEY";
+const username = "UzIyQTgwRjc2NkBzY3JpcHRy:UzIyQTgwRjc2NjpxdWV1ZV9kZXZpY2VAc2NyaXB0cg==";
+const password = "UzIyQTgwRjc2NjpxdWV1ZV9kZXZpY2U6RDZGREJBNDkyQUZCMDQ5M0ZFOEMxRDRCN0EwRUNCMjE=";
+const topic = "UzIyQTgwRjc2Ng==/blog_queuing/invoke";
 
 var client = mqtt.connect("mqtts://mqtt.scriptr.io:8883", {
 	
@@ -36,10 +36,11 @@ setInterval(
 		
 		var temperature = Math.round(Math.random() * 5) + 15;
 		var pressure = Math.round(Math.random() * 20) + 80;
+		var coordinates = "24.9721527:55.1961022";
 		var msg = {
 			method: "blog/queues/processor",
 			params:{
-				data: + temperature + "," + pressure + "," + new Date().toISOString()
+				data: + temperature + "," + pressure + "," + coordinates + "," + new Date().toISOString()
 			}
 		};
 		client.publish(topic, JSON.stringify(msg));
