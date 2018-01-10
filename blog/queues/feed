@@ -1,0 +1,17 @@
+var queueModule = require("queue");
+var queueInstance = queueModule.getInstance("blog_queuing");
+
+if (request.body) {
+
+    var resp = queue("blog_queuing","blog/queues/processor", request.body);
+    if (resp.metadata.status == "failure") {
+        return resp.metadata;
+    }
+
+    return resp;
+}
+
+return {
+    errorCode:"Missing_Parameter",
+    errorDetail: "Expecting request's body to contain parameters" 
+};
