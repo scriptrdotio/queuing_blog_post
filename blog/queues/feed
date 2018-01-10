@@ -1,8 +1,9 @@
-var queueModule = require("queue");
-var queueInstance = queueModule.getInstance("blog_queuing");
+var queueModule = require("queue"); // import the queue module
+// use your own channel name to create an instance of a queue
+var queueInstance = queueModule.getInstance("blog_queuing"); 
 
 if (request.body) {
-
+    // create a new task by queuing an instance of the script
     var resp = queue("blog_queuing","blog/queues/processor", request.body);
     if (resp.metadata.status == "failure") {
         return resp.metadata;
