@@ -1,8 +1,8 @@
 var mqtt = require("mqtt");
 
-const username = "UzIyQTgwRjc2NkBzY3JpcHRy:UzIyQTgwRjc2NjpxdWV1ZV9kZXZpY2VAc2NyaXB0cg==";
-const password = "UzIyQTgwRjc2NjpxdWV1ZV9kZXZpY2U6RDZGREJBNDkyQUZCMDQ5M0ZFOEMxRDRCN0EwRUNCMjE=";
-const topic = "UzIyQTgwRjc2Ng==/blog_queuing/invoke";
+const username = "SCRIPTRIO_QUEUING_USERNAME";
+const password = "SCRIPTRIO_QUEUING_PASSWORD";
+const topic = "SCRIPTRIO_QUEUING_INVOKE_ROUTING_KEY";
 
 var client = mqtt.connect("mqtts://mqtt.scriptr.io:8883", {
 	
