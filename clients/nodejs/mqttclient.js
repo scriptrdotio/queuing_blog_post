@@ -40,7 +40,7 @@ setInterval(
 		var msg = {
 			method: "blog/queues/processor",
 			params:{
-				data: + temperature + "," + pressure + "," + coordinates + "," + new Date().toISOString()
+				data: temperature + "," + pressure + "," + coordinates + "," + new Date().toISOString()
 			}
 		};
 		client.publish(topic, JSON.stringify(msg));
