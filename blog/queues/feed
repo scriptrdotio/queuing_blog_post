@@ -4,7 +4,7 @@ var queueInstance = queueModule.getInstance("blog_queuing");
 
 if (request.body) {
     // create a new task by queuing an instance of the script
-    var resp = queue("blog_queuing","blog/queues/processor", request.body);
+    var resp = queueInstance.queue("blog/queues/processor", request.body);
     if (resp.metadata.status == "failure") {
         return resp.metadata;
     }
